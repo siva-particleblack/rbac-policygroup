@@ -1,0 +1,58 @@
+import { OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AlertService } from '../@core/service/alert.service';
+import { DataStoreService } from '../@core/service/data-store.service';
+import { RBACINFO } from '../@core/urls/rbac-url.config';
+import { RbacService } from '../@core/service/rbac.service';
+import { Subscription } from 'rxjs';
+import * as i0 from "@angular/core";
+export declare class PolicygroupsComponent implements OnInit {
+    private fb;
+    private alertService;
+    private groupsService;
+    private _storeservice;
+    RBACORG: RBACINFO;
+    policyGroupList: any;
+    filteredPolicyGroupList: any[];
+    individuals: any[];
+    managementGroups: any[];
+    modelPolicyName: string;
+    policyGroupForm: FormGroup;
+    policyGroupId: number;
+    userGroupCount: number;
+    deleteactive_role: boolean;
+    deleteactive_buttonok: boolean;
+    deletedId: string;
+    attachedUsers: any;
+    formSubmit: boolean;
+    groupid: string;
+    orgId: any;
+    httpService: any;
+    orgSubs: Subscription;
+    modalContent: string;
+    validationErrors: {
+        [key: string]: string;
+    };
+    inputValidationMethod: any;
+    constructor(fb: FormBuilder, alertService: AlertService, groupsService: RbacService, _storeservice: DataStoreService);
+    ngOnInit(): void;
+    initializeForm(): void;
+    get formValidate(): {
+        [key: string]: import("@angular/forms").AbstractControl;
+    };
+    ngOnDestroy(): void;
+    onInput(event: Event, fieldtype: any, label: any, required: boolean): void;
+    getPolicyGroupList(_managementGroupId?: number): void;
+    getManagementGroupTree(organizationid: any): void;
+    searchPolicyGroup(event: Event): void;
+    getPolicyGroupInfo(policyGroup: any): void;
+    addPolicyGroup(): void;
+    delete(event: Event, id: any, item: any): void;
+    clearSearch(event: Event): void;
+    cancel(): void;
+    onClickAddPolicygroup(): void;
+    deletePolicyGroup(): void;
+    onModelPolicy(value: string): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<PolicygroupsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PolicygroupsComponent, "policygroups", never, {}, {}, never, never>;
+}
