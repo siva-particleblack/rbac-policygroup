@@ -658,9 +658,9 @@ class PolicygroupsComponent {
     addPolicyGroup() {
         const requestBody = [];
         this.formSubmit = true;
-        this.policyGroupForm.value.policygroupname = this.policyGroupForm.value.policygroupname.trim();
         let data = this.policyGroupForm.getRawValue();
         data = Object.assign({ organizationid: this.orgId }, data);
+        data.policygroupname = data.policygroupname.trim();
         requestBody.push(data);
         if (this.policyGroupForm.valid) {
             if (this.policyGroupId) {
