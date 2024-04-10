@@ -1,6 +1,6 @@
 {
   "name": "@pics-core/rbac-policygroups",
-  "version": "1.0.0-OR.12.6",
+  "version": "1.0.0-OR.12.7",
   "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.",
   "directories": {
     "lib": "lib"
