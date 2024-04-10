@@ -1192,7 +1192,15 @@
                     this.groupsService.updatePolicyGroup(this.policyGroupId, data).subscribe(function () {
                         _this.getPolicyGroupList();
                         _this.alertService.success('Policy Group updated successfully');
-                    }, function (_err) { return _this.alertService.error('Failed to update Policy Group'); });
+                    }, function (err) {
+                        var _a;
+                        if (err === null || err === void 0 ? void 0 : err.error) {
+                            _this.alertService.error((_a = err === null || err === void 0 ? void 0 : err.error) === null || _a === void 0 ? void 0 : _a.message);
+                        }
+                        else {
+                            _this.alertService.error('Failed to add Policy Group');
+                        }
+                    });
                 }
                 else {
                     this.groupsService.createPolicyGroup(requestBody).subscribe(function () {
