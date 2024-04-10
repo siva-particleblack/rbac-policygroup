@@ -1181,7 +1181,7 @@
             var _this = this;
             var requestBody = [];
             this.formSubmit = true;
-            this.policyGroupForm.value.patchValue({
+            this.policyGroupForm.patchValue({
                 policygroupname: this.policyGroupForm.value.policygroupname.trim()
             });
             var data = this.policyGroupForm.getRawValue();

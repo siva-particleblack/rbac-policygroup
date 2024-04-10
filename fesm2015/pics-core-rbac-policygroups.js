@@ -658,7 +658,7 @@ class PolicygroupsComponent {
     addPolicyGroup() {
         const requestBody = [];
         this.formSubmit = true;
-        this.policyGroupForm.value.patchValue({
+        this.policyGroupForm.patchValue({
             policygroupname: this.policyGroupForm.value.policygroupname.trim()
         });
         let data = this.policyGroupForm.getRawValue();
