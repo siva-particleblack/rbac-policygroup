@@ -658,6 +658,7 @@ class PolicygroupsComponent {
     addPolicyGroup() {
         const requestBody = [];
         this.formSubmit = true;
+        this.policyGroupForm.value.policygroupname = this.policyGroupForm.value.policygroupname.trim();
         let data = this.policyGroupForm.getRawValue();
         data = Object.assign({ organizationid: this.orgId }, data);
         requestBody.push(data);
@@ -735,7 +736,7 @@ class PolicygroupsComponent {
         }, (_err) => this.alertService.error('Failed to delete Policy Group'));
     }
     onModelPolicy(value) {
-        this.modelPolicyName = value.trim();
+        this.modelPolicyName = value;
     }
 }
 PolicygroupsComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: PolicygroupsComponent, deps: [{ token: i1$1.FormBuilder }, { token: AlertService }, { token: RbacService }, { token: DataStoreService }], target: i0.ɵɵFactoryTarget.Component });

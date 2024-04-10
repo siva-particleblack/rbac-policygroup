@@ -1181,6 +1181,7 @@
             var _this = this;
             var requestBody = [];
             this.formSubmit = true;
+            this.policyGroupForm.value.policygroupname = this.policyGroupForm.value.policygroupname.trim();
             var data = this.policyGroupForm.getRawValue();
             data = Object.assign({ organizationid: this.orgId }, data);
             requestBody.push(data);
@@ -1259,7 +1260,7 @@
             }, function (_err) { return _this.alertService.error('Failed to delete Policy Group'); });
         };
         PolicygroupsComponent.prototype.onModelPolicy = function (value) {
-            this.modelPolicyName = value.trim();
+            this.modelPolicyName = value;
         };
         return PolicygroupsComponent;
     }());
